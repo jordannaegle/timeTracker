@@ -31,13 +31,19 @@ const TimeTracker = () => {
   };
 
   const calculateWorkedTime = (arrival, departure) => {
+    // Ensure both arrival and departure times are provided
     if (!arrival || !departure) return 0;
 
     const arrivalTime = dayjs(arrival, 'HH:mm');
     const departureTime = dayjs(departure, 'HH:mm');
-    const diffInMinutes = departureTime.diff(arrivalTime, 'minute');
 
-    return diffInMinutes > 0 ? diffInMinutes : 0;
+    // Ensure departure is after arrival, otherwise return 0
+    if (!arrivalTime.isValid() || !departureTime.isValid() || departureTime.isBefore(arrivalTime)) {
+      return 0;
+    }
+
+    const diffInMinutes = departureTime.diff(arrivalTime, 'minute');
+    return diffInMinutes > 0 ? diffInMinutes : 0; // Ensure non-negative result
   };
 
   // Calculate total hours worked each week and for the month
@@ -52,7 +58,7 @@ const TimeTracker = () => {
       totalMinutes += workedMinutes;
       currentWeekMinutes += workedMinutes;
 
-      // Check if the day is a Sunday to summarize the week
+      // Check if the day is a Sunday or the last day of the month to summarize the week
       if (day.date.day() === 0 || index === daysInMonth.length - 1) {
         weeklyMinutes.push(currentWeekMinutes);
         currentWeekMinutes = 0;
