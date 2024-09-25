@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/timeTracker/static/css/main.f855e6bc.css",
-    "main.js": "/timeTracker/static/js/main.3adfe57f.js",
+    "main.js": "/timeTracker/static/js/main.2d40d93d.js",
     "static/js/453.51cac1ab.chunk.js": "/timeTracker/static/js/453.51cac1ab.chunk.js",
     "index.html": "/timeTracker/index.html",
     "main.f855e6bc.css.map": "/timeTracker/static/css/main.f855e6bc.css.map",
-    "main.3adfe57f.js.map": "/timeTracker/static/js/main.3adfe57f.js.map",
+    "main.2d40d93d.js.map": "/timeTracker/static/js/main.2d40d93d.js.map",
     "453.51cac1ab.chunk.js.map": "/timeTracker/static/js/453.51cac1ab.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.3adfe57f.js"
+    "static/js/main.2d40d93d.js"
   ]
 }
